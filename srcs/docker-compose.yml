@@ -3,7 +3,7 @@ version: '3.8' # ここは校舎環境を見て設定すること
 services:
   mariadb:
     build:
-      content: ./requirements/mariadb
+      context: ./requirements/mariadb
       dockerfile: Dockerfile
     container_name: mariadb
     networks: 
@@ -16,7 +16,7 @@ services:
   
   wordpress:
     build:
-      content: ./requirements/wordpress
+      context: ./requirements/wordpress
       dockerfile: Dockerfile
     container_name: wordpress
     depends_on:
@@ -31,7 +31,7 @@ services:
   
   nginx:
     build:
-      content: ./requirements/nginx
+      context: ./requirements/nginx
       dockerfile: Dockerfile
     container_name: nginx
     depends_on:
